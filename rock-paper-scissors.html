@@ -32,6 +32,19 @@
             let winMsg = "You win! " + playerSelection + " beats " + computerSelection;
             let loseMsg = "You lose! " + computerSelection + " beats " + playerSelection;
             let drawMsg = "You Draw! Both picked " + playerSelection;
+
+            plyrOptionIndex = options.indexOf(playerSelection) + 1;
+            compOptionIndex = options.indexOf(computerSelection) + 1;
+
+            if (plyrOptionIndex == compOptionIndex) {
+                return drawMsg
+            } else if (plyrOptionIndex - 1 == compOptionIndex) {
+                return loseMsg
+            } else if (compOptionIndex - 1 == plyrOptionIndex) {
+                return winMsg
+            } else {
+                return "Something went wrong."
+            }
         };
 
         function game() {
