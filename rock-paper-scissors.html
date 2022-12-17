@@ -8,26 +8,22 @@
 </head>
 <body>
     <script>
-        function getComputerChoice() {
-            let ranNum = Math.floor(Math.random() * (4 - 1) + 1);
-            /*for (let i = 0; i < 10; i++){
-            let ranNum = Math.floor(Math.random() * (4 - 1) + 1)
-            console.log(ranNum)
-            };*/
-            if (ranNum == 1) {
-                return "rock";
-            } else if (ranNum == 2) {
-                return "paper";
-            } else {
-                return "scissors";
-            };
-        };
+        const options = ["rock", "paper", "scissors"]
 
-        const computerSelection = getComputerChoice();
+        function getComputerChoice() {
+            let ranNum = Math.floor(Math.random() * (4 - 1));
+            return options[ranNum];
+
+            // for (let i = 0; i < 10; i++){
+            // let ranNum = Math.floor(Math.random() * (4 - 1))
+            // console.log(options[ranNum])
+            // };
+        };
 
         function getPlayerChoice() {  
         };
 
+        const computerSelection = getComputerChoice()
         const playerSelection = "rock";
 
         function playRound(playerSelection, computerSelection) {
