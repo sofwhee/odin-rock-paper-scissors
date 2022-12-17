@@ -33,7 +33,17 @@
             let loseMsg = "You lose! " + computerSelection + " beats " + playerSelection;
             let drawMsg = "You Draw! Both picked " + playerSelection;
 
-            if (computerSelection)
+            if (computerSelection == playerSelection) {
+                return drawMsg
+            } else if ((
+                options.indexOf(computerSelection) + 1 == 
+                options.indexOf(playerSelection)) || 
+                (options[0] == computerSelection && 
+                options[-1] == playerSelection)) {
+                return winMsg
+            } else {
+                return loseMsg
+            };
         };
 
         function game() {
