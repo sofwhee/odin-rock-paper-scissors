@@ -22,7 +22,7 @@
 
         function getPlayerChoice() {
             let playerChoice
-            while (not (options.includes(playerChoice))) {
+            while (!options.includes(playerChoice)) {
                 let playerChoice = prompt("Choose: Rock, paper, or scissors?");
             }
             return playerChoice.toLowerCase();
