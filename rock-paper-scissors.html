@@ -38,18 +38,23 @@
             let winMsg = "You win! " + playerSelection + " beats " + computerSelection;
             let loseMsg = "You lose! " + playerSelection + " loses to " + computerSelection;
             let drawMsg = "You Draw! Both picked " + playerSelection;
-
-            if (computerSelection == playerSelection) {
+            
+            if (playerSelection == computerSelection) {
                 return drawMsg
-            } else if ((
-                options.indexOf(computerSelection) + 1 == 
-                options.indexOf(playerSelection)) || 
-                (options[-1] == computerSelection && 
-                options[0] == playerSelection)) {
-                return winMsg
-            } else {
-                return loseMsg
-            };
+            }
+            if (playerSelection == "rock") {
+                if (computerSelection == "paper") {
+                    return loseMsg
+                } else {return winMsg}
+            } else if (playerSelection == "paper") {
+                if (computerSelection == "scissors") {
+                    return loseMsg
+                } else {return winMsg}
+            } else if (playerSelection == "scissors") {
+                if (computerSelection == "rock") {
+                    return loseMsg
+                } else {return winMsg}
+            }
         };
 
         function game() {
