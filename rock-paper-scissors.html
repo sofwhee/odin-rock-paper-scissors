@@ -11,7 +11,7 @@
         const options = ["rock", "paper", "scissors"]
 
         function getComputerChoice() {
-            let ranNum = Math.floor(Math.random() * (4 - 1));
+            let ranNum = Math.floor(Math.random() * (3));
             return options[ranNum];
 
             // for (let i = 0; i < 10; i++){
@@ -21,7 +21,10 @@
         };
 
         function getPlayerChoice() {
-            let playerChoice = prompt("Choose: Rock, paper, or scissors?");
+            let playerChoice
+            while (not (options.includes(playerChoice))) {
+                let playerChoice = prompt("Choose: Rock, paper, or scissors?");
+            }
             return playerChoice.toLowerCase();
         };
 
@@ -30,18 +33,7 @@
             let loseMsg = "You lose! " + computerSelection + " beats " + playerSelection;
             let drawMsg = "You Draw! Both picked " + playerSelection;
 
-            plyrOptionIndex = options.indexOf(playerSelection) + 1;
-            compOptionIndex = options.indexOf(computerSelection) + 1;
-
-            if (plyrOptionIndex == compOptionIndex) {
-                return drawMsg;
-            } else if (plyrOptionIndex - 1 == compOptionIndex) {
-                return loseMsg;
-            } else if (compOptionIndex - 1 == plyrOptionIndex) {
-                return winMsg;
-            } else {
-                return "Something went wrong.";
-            };
+            if (computerSelection)
         };
 
         function game() {
