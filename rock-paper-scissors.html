@@ -20,11 +20,13 @@
             // };
         };
 
-        function getPlayerChoice() {  
+        function getPlayerChoice() {
+            let playerChoice = prompt("Choose: Rock, paper, or scissors?");
+            return playerChoice.toLowerCase();
         };
 
-        const computerSelection = getComputerChoice()
-        const playerSelection = "rock";
+        const computerSelection = getComputerChoice();
+        const playerSelection = getPlayerChoice();
 
         function playRound(playerSelection, computerSelection) {
             let winMsg = "You win! " + playerSelection + " beats " + computerSelection;
