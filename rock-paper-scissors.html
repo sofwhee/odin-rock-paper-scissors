@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
+
 <body>
-    <script>
-        const options = ["rock", "paper", "scissors"]
+	<script>
+		const options = ["rock", "paper", "scissors"]
 
-        function getComputerChoice() {
-            let ranNum = Math.floor(Math.random() * (3));
-            return options[ranNum];
+		function getComputerChoice() {
+			let ranNum = Math.floor(Math.random() * (3));
+			return options[ranNum];
 
-            // for (let i = 0; i < 10; i++){
-            // let ranNum = Math.floor(Math.random() * (4 - 1))
-            // console.log(options[ranNum])
-            // };
-        };
+			// for (let i = 0; i < 10; i++){
+			// let ranNum = Math.floor(Math.random() * (4 - 1))
+			// console.log(options[ranNum])
+			// };
+		};
 
-        function getPlayerChoice() {
-            let playerChoice
+		function getPlayerChoice() {
+			let playerChoice
 
-            while (options.includes(playerChoice) === false) {
-                playerChoice = prompt("Choose: Rock, paper, or scissors?");
-                console.log(playerChoice)
-                if (options.includes(playerChoice) === false) {
-                    window.alert("Invalid input!")
-                }
-            }
-            
-            return playerChoice.toLowerCase();
-        };
+			while (options.includes(playerChoice) === false) {
+				playerChoice = prompt("Choose: Rock, paper, or scissors?");
+				console.log(playerChoice)
+				if (options.includes(playerChoice) === false) {
+					window.alert("Invalid input!")
+				}
+			}
 
-        function playRound(playerSelection, computerSelection) {
-            let winMsg = "You win! " + playerSelection + " beats " + computerSelection;
-            let loseMsg = "You lose! " + playerSelection + " loses to " + computerSelection;
-            let drawMsg = "You Draw! Both picked " + playerSelection;
-            
-            if (playerSelection == computerSelection) {
-                return drawMsg
-            }
-            if (playerSelection == "rock") {
-                if (computerSelection == "paper") {
-                    return loseMsg
-                } else {return winMsg}
-            } else if (playerSelection == "paper") {
-                if (computerSelection == "scissors") {
-                    return loseMsg
-                } else {return winMsg}
-            } else if (playerSelection == "scissors") {
-                if (computerSelection == "rock") {
-                    return loseMsg
-                } else {return winMsg}
-            }
-        };
+			return playerChoice.toLowerCase();
+		};
 
-        function game() {
-            for (let i = 0; i < 5; i++) {
-                let playerSelection = getPlayerChoice()
-                let computerSelection = getComputerChoice()
-                console.log(playRound(playerSelection, computerSelection));
-        };
-        };
+		function playRound(playerSelection, computerSelection) {
+			let winMsg = "You win! " + playerSelection + " beats " + computerSelection;
+			let loseMsg = "You lose! " + playerSelection + " loses to " + computerSelection;
+			let drawMsg = "You Draw! Both picked " + playerSelection;
 
-        game()
-        
-    </script>
+			if (playerSelection == computerSelection) {
+				return drawMsg
+			}
+			if (playerSelection == "rock") {
+				if (computerSelection == "paper") {
+					return loseMsg
+				} else { return winMsg }
+			} else if (playerSelection == "paper") {
+				if (computerSelection == "scissors") {
+					return loseMsg
+				} else { return winMsg }
+			} else if (playerSelection == "scissors") {
+				if (computerSelection == "rock") {
+					return loseMsg
+				} else { return winMsg }
+			}
+		};
+
+		function game() {
+			for (let i = 0; i < 5; i++) {
+				let playerSelection = getPlayerChoice()
+				let computerSelection = getComputerChoice()
+				console.log(playRound(playerSelection, computerSelection));
+			};
+		};
+
+		game()
+
+	</script>
 </body>
+
 </html>
