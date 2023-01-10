@@ -102,6 +102,7 @@
 			let winnerMsg = (playerScore > compScore) ? "Player wins!" : "Computer wins!";
 			const endDiv = document.createElement('div')
 			endDiv.textContent = winnerMsg
+			document.querySelector('body').appendChild(endDiv)
 		}
 
 		function choiceClick(btnToChange) {
