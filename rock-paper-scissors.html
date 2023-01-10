@@ -15,11 +15,13 @@
 	<button class="choiceSelection" id="scissors">Scissors!</button>
 
 	<div id="results"></div>
+	<div id="score"></div>
 	
 	<script>
-		const playerScore = 0
-		const compScore = 0
-		const scoreText = `Player: ${playerScore} Computer: ${compScore}` 
+		let playerScore = 0
+		let compScore = 0
+		let scoreText = `Player: ${playerScore} Computer: ${compScore}`
+
 		const options = ["rock", "paper", "scissors"]
 
 		function getComputerChoice() {
@@ -51,16 +53,18 @@
 				+ playerSelection;
 			
 			function winRound() {
-				playerScore++
-				return winMsg
-			}
+				playerScore++;
+				return winMsg;
+			};
+
 			function loseRound() {
-				compScore++
-				return loseMsg
-			}
+				compScore++;
+				return loseMsg;
+			};
+
 			function drawRound() {
-				return drawMsg
-			}
+				return drawMsg;
+			};
 
 			if (playerSelection == computerSelection) {
 				return drawRound();
@@ -98,17 +102,13 @@
 
 			btnToChange.addEventListener('click', () => {
 
-				roundResult = playRound(btnSelection, getComputerChoice());
+				let roundResult = playRound(btnSelection, getComputerChoice());
 				const results = document.getElementById('results');
 				results.textContent = roundResult;
-
-				if (roundResult.toLowerCase().includes("lose")) {
-					
-				} else if (roundResult.toLowerCase().includes("win")) {
-
-				} else if (roundResult.toLowerCase().includes("draw")) {
-
-				}
+				
+				scoreText = `Player: ${playerScore} Computer: ${compScore}`;
+				const scoreDiv = document.getElementById('score');
+				scoreDiv.textContent = scoreText;				
 			});
 		};
 
