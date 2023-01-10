@@ -17,6 +17,9 @@
 	<div id="results"></div>
 	
 	<script>
+		const playerScore = 0
+		const compScore = 0
+		const scoreText = `Player: ${playerScore} Computer: ${compScore}` 
 		const options = ["rock", "paper", "scissors"]
 
 		function getComputerChoice() {
@@ -30,6 +33,7 @@
 		}
 
 		function playRound(playerSelection, computerSelection) {
+
 			let winMsg = 
 				"You win! " + 
 				playerSelection + 
@@ -45,6 +49,18 @@
 			let drawMsg = 
 				"You Draw! Both picked " 
 				+ playerSelection;
+			
+			function winRound() {
+				playerScore++
+				return winMsg
+			}
+			function loseRound() {
+				compScore++
+				return loseMsg
+			}
+			function drawRound() {
+				return drawMsg
+			}
 
 			if (playerSelection == computerSelection) {
 				return drawMsg;
@@ -81,7 +97,18 @@
 			const btnSelection = btnToChange.textContent.toLowerCase().replace("!", "");
 
 			btnToChange.addEventListener('click', () => {
-				document.getElementById('results').textContent = playRound(btnSelection, getComputerChoice())
+
+				roundResult = playRound(btnSelection, getComputerChoice());
+				const results = document.getElementById('results');
+				results.textContent = roundResult;
+
+				if (roundResult.toLowerCase().includes("lose")) {
+					score 
+				} else if (roundResult.toLowerCase().includes("win")) {
+
+				} else if (roundResult.toLowerCase().includes("draw")) {
+
+				}
 			});
 		};
 
