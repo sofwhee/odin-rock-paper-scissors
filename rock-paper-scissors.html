@@ -15,13 +15,6 @@
 	<button class="choiceSelection" id="scissors">Scissors!</button>
 	
 	<script>
-		function choiceClick() {
-
-		};
-
-		buttons = Array.from(document.querySelectorAll('.choiceSelection'));
-		buttons.forEach();
-
 		const options = ["rock", "paper", "scissors"]
 
 		function getComputerChoice() {
@@ -95,6 +88,19 @@
 			}
 		}
 
+		function choiceClick(btnToChange) {
+
+			const btnSelection = btnToChange.textContent.toLowerCase().replace("!", "")
+			console.log(btnSelection)
+
+			btnToChange.addEventListener('click', () => {
+				playRound(btnSelection, getComputerChoice())
+			})
+		};
+
+		buttons = Array.from(document.querySelectorAll('.choiceSelection'));
+		buttons.forEach();
+		
 		function game() {
 			
 		}
