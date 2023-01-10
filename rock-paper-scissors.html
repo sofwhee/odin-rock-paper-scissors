@@ -63,30 +63,30 @@
 			}
 
 			if (playerSelection == computerSelection) {
-				return drawMsg;
+				return drawRound();
 			
 			} else if (playerSelection == "rock") {
 
 					if (computerSelection == "paper") {
-						return loseMsg;
+						return loseRound();
 					} else {
-						return winMsg; 
+						return winRound(); 
 					}
 			
 			} else if (playerSelection == "paper") {
 				
 					if (computerSelection == "scissors") {
-						return loseMsg;
+						return loseRound();
 					} else { 
-						return winMsg; 
+						return winRound(); 
 					}
 
 			} else if (playerSelection == "scissors") {
 				
 				if (computerSelection == "rock") {
-					return loseMsg;
+					return loseRound();
 					} else { 
-					return winMsg; 
+					return winRound(); 
 				}
 
 			}
@@ -103,7 +103,7 @@
 				results.textContent = roundResult;
 
 				if (roundResult.toLowerCase().includes("lose")) {
-					score 
+					
 				} else if (roundResult.toLowerCase().includes("win")) {
 
 				} else if (roundResult.toLowerCase().includes("draw")) {
