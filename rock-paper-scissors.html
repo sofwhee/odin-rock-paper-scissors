@@ -10,11 +10,18 @@
 
 <body>
 	
-	<button class="choiceSelection" id="rock"></button>
-	<button class="choiceSelection" id="paper"></button>
-	<button class="choiceSelection" id="scissors"></button>
+	<button class="choiceSelection" id="rock">Rock!</button>
+	<button class="choiceSelection" id="paper">Paper!</button>
+	<button class="choiceSelection" id="scissors">Scissors!</button>
 	
 	<script>
+		function choiceClick() {
+
+		};
+
+		buttons = Array.from(document.querySelectorAll('.choiceSelection'));
+		buttons.forEach();
+
 		const options = ["rock", "paper", "scissors"]
 
 		function getComputerChoice() {
