@@ -96,6 +96,10 @@
 			}
 		}
 
+		function endGame (playerScore, compScore) {
+
+		}
+
 		function choiceClick(btnToChange) {
 
 			const btnSelection = btnToChange.textContent.toLowerCase().replace("!", "");
@@ -111,11 +115,9 @@
 				scoreDiv.textContent = scoreText;				
 			});
 		};
-
+		
 		buttons = Array.from(document.querySelectorAll('.choiceSelection'));
 		buttons.forEach(element => choiceClick(element));
-
-		
 	</script>
 </body>
 
