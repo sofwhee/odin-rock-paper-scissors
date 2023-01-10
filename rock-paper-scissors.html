@@ -9,6 +9,11 @@
 </head>
 
 <body>
+	
+	<button class="choiceSelection" id="rock"></button>
+	<button class="choiceSelection" id="paper"></button>
+	<button class="choiceSelection" id="scissors"></button>
+	
 	<script>
 		const options = ["rock", "paper", "scissors"]
 
@@ -84,11 +89,7 @@
 		}
 
 		function game() {
-			for (let i = 0; i < 5; i++) {
-				let playerSelection = getPlayerChoice()
-				let computerSelection = getComputerChoice()
-				console.log(playRound(playerSelection, computerSelection));
-			}
+			
 		}
 
 		game()
