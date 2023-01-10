@@ -76,22 +76,16 @@
 
 		function choiceClick(btnToChange) {
 
-			const btnSelection = btnToChange.textContent.toLowerCase().replace("!", "")
-			console.log(btnSelection)
+			const btnSelection = btnToChange.textContent.toLowerCase().replace("!", "");
+			console.log(btnSelection);
 
 			btnToChange.addEventListener('click', () => {
 				playRound(btnSelection, getComputerChoice())
-			})
+			});
 		};
 
 		buttons = Array.from(document.querySelectorAll('.choiceSelection'));
-		buttons.forEach();
-		
-		function game() {
-			
-		}
-
-		game()
+		buttons.forEach(choiceClick(element));
 
 	</script>
 </body>
