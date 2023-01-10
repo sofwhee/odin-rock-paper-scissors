@@ -97,7 +97,7 @@
 		}
 
 		function endGame (playerScore, compScore) {
-			buttons.forEach(element => document.removeChild(element))
+			buttons.forEach(element => document.querySelector('body').removeChild(element))
 
 			let winnerMsg = (playerScore > compScore) ? "Player wins!" : "Computer wins!";
 			const endDiv = document.createElement('div')
@@ -116,7 +116,11 @@
 				
 				scoreText = `Player: ${playerScore} Computer: ${compScore}`;
 				const scoreDiv = document.getElementById('score');
-				scoreDiv.textContent = scoreText;				
+				scoreDiv.textContent = scoreText;
+				
+				if (playerScore == 5 || compScore == 5) {
+					endGame(playerScore, compScore)
+				}
 			});
 		};
 		
