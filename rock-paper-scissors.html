@@ -97,7 +97,11 @@
 		}
 
 		function endGame (playerScore, compScore) {
+			buttons.forEach(element => document.removeChild(element))
 
+			let winnerMsg = (playerScore > compScore) ? "Player wins!" : "Computer wins!";
+			const endDiv = document.createElement('div')
+			endDiv.textContent = winnerMsg
 		}
 
 		function choiceClick(btnToChange) {
