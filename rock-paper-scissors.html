@@ -27,20 +27,6 @@
 			// };
 		}
 
-		function getPlayerChoice() {
-			let playerChoice;
-
-			while (options.includes(playerChoice) === false) {
-				playerChoice = prompt("Choose: Rock, paper, or scissors?");
-				console.log(playerChoice);
-				if (options.includes(playerChoice) === false) {
-					window.alert("Invalid input!");
-				};
-			};
-
-			return playerChoice.toLowerCase();
-		}
-
 		function playRound(playerSelection, computerSelection) {
 			let winMsg = 
 				"You win! " + 
